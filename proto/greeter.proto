@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package greeter;
+
+service Greeter {
+	rpc SayHello (HelloRequest) returns (HelloResponse) {}
+	rpc RandomNumber (RandomNumberRequest) returns (stream RandomNumberResponse) {};
+	rpc TodoList (stream TodoRequest) returns (TodoResponse) {};
+	rpc ChatHello (stream HelloRequest) returns (stream HelloResponse) {};
+}
+
+message HelloRequest {
+	string name = 1;
+}
+
+message HelloResponse {
+	string message = 1;
+}
+
+message RandomNumberRequest {
+	uint64 size = 1;
+}
+
+message RandomNumberResponse {
+	uint64 message = 1;
+}
+
+message TodoRequest {
+	string todos = 1;
+	string status = 2;
+}
+
+message TodoResponse {
+	repeated TodoRequest todos = 1;
+}

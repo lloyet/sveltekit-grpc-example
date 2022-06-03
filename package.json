@@ -1,0 +1,46 @@
+{
+  "name": "sveltekit-grpc-example",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync",
+    "test": "playwright test",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "proto:gen": "protoc -I=proto greeter.proto --js_out=import_style=typescript:src/lib/proto --grpc-web_out=import_style=typescript,mode=grpcwebtext:src/lib/proto"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.21.0",
+    "@protobuf-ts/protoc": "^2.6.0",
+    "@sveltejs/adapter-node": "^1.0.0-next.73",
+    "@sveltejs/kit": "next",
+    "@types/cookie": "^0.4.1",
+    "@types/google-protobuf": "^3.15.6",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.12.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^4.0.0",
+    "google-protobuf": "^3.20.1",
+    "grpc-web": "^1.3.1",
+    "prettier": "^2.5.1",
+    "prettier-plugin-svelte": "^2.5.0",
+    "protoc-gen-grpc-web": "^1.4.0",
+    "svelte": "^3.46.0",
+    "svelte-check": "^2.2.6",
+    "svelte-preprocess": "^4.10.1",
+    "tslib": "^2.3.1",
+    "typescript": "~4.6.2"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.5.0",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
+  }
+}
